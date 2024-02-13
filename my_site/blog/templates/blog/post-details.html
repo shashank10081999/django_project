@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block title %}
+post details
+{% endblock%}
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'blog/post-details.css' %}">
+{% endblock%}
+
+{% block content%}
+
+<section id = "Summary">
+    <img src="{% static 'blog/images/'|add:post.image %}">
+    <h2> {{post.title}} </h2>
+
+    <articel>
+
+        <address>By Shashank Garimella </address>
+        <div> Last updated on <time> 10th August 2023 </time> </div>
+    </article>
+</section>
+
+<mian>
+    {{post.content}}
+</main>
+{% endblock %}

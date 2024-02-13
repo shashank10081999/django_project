@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+my blog
+{% endblock %}
+
+{% block css_file %}
+<link rel="stylesheet" href="{% static 'blog/index.css' %}">
+<link rel="stylesheet" href="{% static 'blog/posts.css' %}">
+
+
+{% endblock %}
+
+{% block content %}
+
+<section id = 'welcome'>
+<header>
+    <img src = "{% static 'blog/images/shashank.png' %}"  alt = "Shashank Garimella's blog">
+    <h2> SHASHANK GARIMELLA's BLOG</h2>
+</header>
+<p> Hi , I am Shashank Garimella , MS Data Science Student at University of North Texas . welcome to my blog</p>
+
+</section>
+
+<section id = 'latest-posts'>
+    <h2> my lastes throughs</h2>
+
+    <ul>
+        {% for post in posts%}
+        {% include "blog/includes/posts.html" %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id = "about">
+<h2> What I do</h2>
+<p> Dedicated and results-driven Data Science graduate with hands-on experience in energy analysis, ETL processes, and 
+    machine learning engineering. Proficient in generating actionable insights, reducing energy consumption, and improving 
+    data accuracy. Adept at collaborating with cross-functional teams and automating processes to enhance efficiency and 
+    quality. Experienced in Python, data-driven decision-making, and deploying ML models. Successfully led a team to 
+    implement traffic management solutions, reducing congestion. Skilled in data visualization, SQL, predictive modeling, 
+    and CI/CD pipeline </p>
+<p> My goal is to become a data scientist at google </p>
+
+</section>
+{% endblock %}
